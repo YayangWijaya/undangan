@@ -72,12 +72,62 @@
       .galeri {
         border-radius: 20px;
       }
+
+      @media (min-width: 992px) {
+            .corner-img {
+                height: 300px;
+                position: fixed;
+            }
+
+            .cover {
+              opacity: 0.1;
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              background-size: contain;
+            }
+        }
+
+        /* Tablet screens */
+        @media (max-width: 991px) and (min-width: 576px) {
+            .corner-img {
+                height: 200px;
+            }
+
+            .cover {
+              opacity: 0.1;
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background-size: cover;
+            }
+        }
+
+        /* Smartphone screens */
+        @media (max-width: 575px) {
+            .corner-img {
+                height: 125px;
+                position: absolute;
+            }
+
+            .cover {
+              opacity: 0.1;
+              position: absolute;
+              left: 0;
+              top: 0;
+              height: 100%;
+              background-size: cover;
+            }
+        }
     </style>
 
     <script>
-      (function() {
-        theme.change('light')
-      })
+       document.addEventListener('DOMContentLoaded', (event) => {
+            theme.change('light')
+        });
     </script>
 </head>
 
@@ -122,8 +172,8 @@
 
     <!-- Main Content -->
     <main class="bg-dark text-light" data-bs-spy="scroll" data-bs-target="#navbar-menu" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
-        <img src="./assets/images/corner.png" style="position: fixed;height: 300px;"/>
-        <img src="./assets/images/corner.png" style="position: fixed;height: 300px;right: 0;transform: rotate(90deg);"/>
+        <img src="./assets/images/corner.png" class="corner-img"/>
+        <img src="./assets/images/corner.png" class="corner-img" style="right: 0;transform: rotate(90deg);"/>
         <!-- Home -->
         <section class="container" id="home">
 
@@ -510,9 +560,6 @@
                         <small>
                             <i class="fa-brands fa-github me-1"></i><a target="_blank" href="https://github.com/dewanakl/undangan">dewanakl</a>
                         </small>
-                        <small>
-                            <i class="fa-brands fa-youtube me-1"></i><a target="_blank" href="https://www.youtube.com/watch?v=1WCIrw85zbQ">I Wanna Grow Old with You</a>
-                        </small>
                     </div>
                 </div>
             </div>
@@ -520,8 +567,8 @@
     </footer>
 
     <!-- Welcome Page -->
-    <div class="loading-page bg-black" id="welcome" style="opacity: 1;background: #FFF !important;">
-        <img src="./assets/images/cover.jpg" style="opacity: 0.1;position: absolute;left: 0;top: 0;width: 100%;height: auto;"/>
+    <div class="loading-page" id="welcome" style="opacity: 1;background: #FFF !important;">
+        <img src="./assets/images/cover.jpg" class="cover"/>
 
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;position: relative;">
             <div class="text-center">

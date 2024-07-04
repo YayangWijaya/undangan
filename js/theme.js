@@ -99,12 +99,13 @@ export const theme = (() => {
     };
 
     const change = (type) => {
-        if (type && type === 'light') {
+        if (type === 'light') {
           onLight();
           document.documentElement.setAttribute(THEME_BS_DATA, THEME_LIGHT);
           theme.set('active', THEME_LIGHT);
+          return
         }
-        
+
         if (isDarkMode()) {
             onLight();
             document.documentElement.setAttribute(THEME_BS_DATA, THEME_LIGHT);
