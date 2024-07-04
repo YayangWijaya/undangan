@@ -98,8 +98,8 @@ export const theme = (() => {
         return status;
     };
 
-    const change = () => {
-        if (isDarkMode()) {
+    const change = (type) => {
+        if (type === 'light') {
             onLight();
             document.documentElement.setAttribute(THEME_BS_DATA, THEME_LIGHT);
             theme.set('active', THEME_LIGHT);
